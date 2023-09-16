@@ -26,6 +26,10 @@ const baseConfig = {
                 exclude: /node_modules/,
             },
             {
+                test: /\.(ttf|woff|woff2)$/i,
+                type: 'asset/inline',
+            },
+            {
                 test: /\.s?[ac]ss$/,
                 use: [devMode ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
@@ -40,7 +44,8 @@ const baseConfig = {
             extensions: ['js', 'jsx', 'ts', 'tsx'],
         }),
         new CopyWebpackPlugin({
-            patterns: [{ from: './favicon.png', to: '.' }],
+            patterns: [{ from: './favicon.png', to: '.' },
+                       { from: './gitlabmono.woff2', to: '.' }],
         }),
         new MiniCssExtractPlugin({
             filename: devMode ? '[name].css' : '[name].[contenthash].css',
