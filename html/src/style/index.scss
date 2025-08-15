@@ -16,3 +16,10 @@ body {
     height: calc(100% - 10px);
   }
 }
+
+@font-face {
+  font-family: GitLab Mono;
+  font-weight: normal;
+  font-style: normal;
+  src: url('../gitlabmono.woff2') format('woff2');
+}
